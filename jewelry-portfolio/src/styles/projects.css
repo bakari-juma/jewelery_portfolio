@@ -1,0 +1,44 @@
+.work-section { background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--accent-soft) 19%, transparent) 35%, transparent 100%); }
+.project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 25px 20px; }
+.project-card { min-width: 0; padding: 0; border: 0; background: transparent; color: var(--text); text-align: left; cursor: pointer; }
+.project-card-art { position: relative; display: grid; min-height: clamp(220px, 26vw, 320px); overflow: hidden; place-items: center; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(145deg, #f5efe5, #f1dcd6 65%, #e5d4b8); transition: transform .3s ease, box-shadow .3s ease; }
+.project-card:hover .project-card-art, .project-card:focus-visible .project-card-art { box-shadow: var(--shadow); transform: translateY(-4px); }
+.product-silhouette { position: relative; display: grid; width: 100%; height: 100%; min-height: inherit; place-items: center; overflow: hidden; }
+.product-photo { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.product-silhouette::before { position: absolute; width: 64%; aspect-ratio: 1; border: 1px solid rgba(201,166,107,.34); border-radius: 50%; content: ''; }
+.silhouette-chain { position: absolute; top: 14%; left: 50%; width: 28%; height: 49%; border: 1px solid #aa8750; border-bottom: 0; border-radius: 50% 50% 0 0; transform: translateX(-50%); }
+.silhouette-body { position: absolute; top: 58%; left: 50%; width: 46px; height: 54px; border: 1px solid #b38e50; border-radius: 47% 47% 54% 54%; background: linear-gradient(140deg, #f9e8bd, #c9a66b 60%, #9b7438); clip-path: polygon(50% 0, 100% 25%, 84% 75%, 50% 100%, 16% 75%, 0 25%); transform: translateX(-50%); }
+.silhouette-detail { position: absolute; top: 62%; left: 50%; width: 13px; height: 19px; border-left: 1px solid rgba(255,255,255,.8); transform: translateX(-50%); }
+.silhouette-charms .silhouette-body, .silhouette-personalized .silhouette-body { width: 58px; height: 58px; border-radius: 50%; clip-path: none; }
+.silhouette-accessories .silhouette-body { width: 79px; height: 35px; border-radius: 20px 20px 8px 8px; clip-path: none; }
+.image-placeholder-tag { position: absolute; top: 14px; left: 14px; padding: 6px 8px; border: 1px solid rgba(26,26,26,.16); border-radius: 2px; background: rgba(250,247,242,.75); color: #51483c; font-size: .56rem; font-weight: 600; }
+.concept-render-tag { position: absolute; z-index: 3; top: 14px; left: 14px; padding: 6px 8px; border: 1px solid rgba(26,26,26,.16); border-radius: 2px; background: rgba(250,247,242,.88); color: #51483c; font-size: .56rem; font-weight: 600; }
+.project-card-index { position: absolute; right: 15px; bottom: 13px; color: rgba(26,26,26,.55); font-family: var(--serif); font-size: 1.1rem; }
+.project-card-info { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 14px 2px 2px; }
+.project-category { color: var(--accent); font-size: .65rem; font-weight: 600; text-transform: uppercase; }
+.project-status { color: var(--muted); font-size: .6rem; font-weight: 500; text-transform: none; }
+.concept-status { display: inline-flex; padding: 6px 9px; border: 1px solid var(--accent); border-radius: 99px; color: var(--muted); font-size: .62rem; }
+.project-card-title { padding-right: 28px; font-family: var(--serif); font-size: 1.45rem; }
+.project-teaser { color: var(--muted); font-size: .75rem; line-height: 1.55; }
+.project-open { position: absolute; right: 3px; bottom: 7px; color: var(--accent); }
+.modal-backdrop { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 22px; background: rgba(12,11,10,.72); animation: modal-fade .18s ease-out; }
+@keyframes modal-fade { from { opacity: 0; } to { opacity: 1; } }
+.project-modal { position: relative; display: grid; width: min(980px, 100%); max-height: min(88svh, 820px); grid-template-columns: minmax(240px, .75fr) 1.25fr; overflow: auto; border-radius: 12px; background: var(--bg); box-shadow: 0 28px 90px rgba(0,0,0,.35); animation: modal-rise .24s ease-out; }
+@keyframes modal-rise { from { opacity: 0; transform: translateY(12px) scale(.99); } to { opacity: 1; transform: none; } }
+.modal-close { position: absolute; z-index: 2; top: 15px; right: 15px; display: inline-flex; align-items: center; gap: 10px; min-height: 39px; padding: 0 12px; border: 1px solid var(--line); border-radius: 99px; background: var(--surface); cursor: pointer; font-size: .7rem; }
+.modal-close span { color: var(--accent); font-size: 1.2rem; }
+.modal-visual { position: relative; display: grid; min-height: 100%; place-items: center; background: linear-gradient(150deg, #f5efe5, #f1dcd6 65%, #e5d4b8); }
+.modal-visual .product-silhouette { min-height: 380px; }
+.modal-content { padding: 45px clamp(24px, 4vw, 52px); }
+.modal-content h2 { max-width: 520px; font-size: clamp(2.3rem, 4vw, 3.8rem); }
+.modal-teaser { color: var(--muted); font-size: .84rem; line-height: 1.6; }
+.modal-content section { margin-top: 27px; }
+.modal-content h3 { margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: .68rem; font-weight: 600; text-transform: uppercase; }
+.modal-content p { color: var(--muted); font-size: .76rem; line-height: 1.6; }
+.modal-copy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.spec-block { padding-top: 20px; border-top: 1px solid var(--line); }
+.spec-table { margin: 0; border-top: 1px solid var(--line); }
+.spec-table div { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.spec-table dd { margin: 0; font-size: .7rem; text-align: right; }
+@media (max-width: 800px) { .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .project-modal { grid-template-columns: 1fr; } .modal-visual { min-height: 230px; } .modal-visual .product-silhouette { min-height: 260px; } }
+@media (max-width: 520px) { .project-grid { grid-template-columns: 1fr; } .project-card-art { min-height: 290px; } .modal-backdrop { padding: 10px; } .project-modal { max-height: 94svh; } .modal-content { padding: 35px 22px; } .modal-copy-grid { grid-template-columns: 1fr; gap: 8px; } }

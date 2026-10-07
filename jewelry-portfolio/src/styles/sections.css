@@ -1,0 +1,37 @@
+.workflow-section { border-top: 1px solid var(--line); }
+.workflow-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(38px, 8vw, 108px); align-items: start; }
+.step-list { border-top: 1px solid var(--line); }
+.step-button { display: grid; width: 100%; min-height: 58px; grid-template-columns: 34px 1fr 20px; align-items: center; gap: 9px; padding: 7px 4px; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--muted); text-align: left; cursor: pointer; font-size: .83rem; transition: color .2s ease, padding .2s ease; }
+.step-button:hover, .step-button.is-selected { padding-left: 11px; color: var(--text); }
+.step-number { color: var(--accent); font-size: .68rem; }
+.step-arrow { justify-self: end; color: var(--accent); opacity: 0; transition: opacity .2s ease; }
+.step-button.is-selected .step-arrow { opacity: 1; }
+.step-detail { min-height: 330px; padding: 30px clamp(24px, 4vw, 54px); border-left: 1px solid var(--accent); background: linear-gradient(135deg, color-mix(in srgb, var(--accent-soft) 35%, transparent), transparent 70%); }
+.detail-kicker, .example-note > span { color: var(--accent); font-size: .63rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.step-detail h3 { margin: 25px 0 10px; font-size: clamp(1.8rem, 3vw, 2.7rem); }
+.step-detail > p, .example-note p { color: var(--muted); font-size: .89rem; line-height: 1.7; }
+.example-note { margin-top: 35px; padding-top: 17px; border-top: 1px solid var(--line); }
+.example-note p { margin: 10px 0 0; }
+.trend-section { padding-top: 0; }
+.filter-row { display: flex; flex-wrap: wrap; gap: 7px; }
+.filter-chip { min-height: 34px; padding: 0 12px; border: 1px solid var(--line); border-radius: 99px; background: transparent; color: var(--muted); cursor: pointer; font-size: .68rem; transition: color .2s ease, border .2s ease, background .2s ease; }
+.filter-chip:hover, .filter-chip.is-selected { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 13%, transparent); color: var(--text); }
+.trend-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.trend-item { display: flex; min-height: 350px; flex-direction: column; padding: 23px 20px 18px; border-right: 1px solid var(--line); }
+.trend-item:first-child { padding-left: 0; }
+.trend-item:last-child { padding-right: 0; border-right: 0; }
+.trend-topline { display: flex; justify-content: space-between; align-items: center; }
+.source-tag { color: var(--accent); font-size: .65rem; font-weight: 600; }
+.trend-index { color: var(--muted); font-size: .62rem; }
+.trend-item h3 { min-height: 54px; margin: 22px 0 6px; font-size: 1.5rem; }
+.trend-source { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); text-decoration: none; font-size: .66rem; }
+.trend-fields { margin: 22px 0 0; }
+.trend-fields div { margin-bottom: 14px; }
+.trend-fields dt, .spec-table dt { color: var(--muted); font-size: .62rem; }
+.trend-fields dd { margin: 5px 0 0; font-size: .76rem; line-height: 1.5; }
+.heat-meter { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 17px; border-top: 1px solid var(--line); color: var(--muted); font-size: .61rem; }
+.heat-track { display: flex; gap: 3px; }
+.heat-track i { display: block; width: 13px; height: 4px; background: var(--line-strong); }
+.heat-track i.is-hot { background: var(--accent); }
+@media (max-width: 900px) { .trend-grid { grid-template-columns: repeat(2, 1fr); } .trend-item:nth-child(2) { border-right: 0; } .trend-item:nth-child(3), .trend-item:nth-child(4) { border-top: 1px solid var(--line); } .trend-item:nth-child(3) { padding-left: 0; } .trend-item:nth-child(4) { padding-right: 0; } }
+@media (max-width: 650px) { .workflow-layout { grid-template-columns: 1fr; gap: 26px; } .step-detail { min-height: auto; padding: 24px; } .trend-grid { grid-template-columns: 1fr; } .trend-item, .trend-item:first-child, .trend-item:last-child { min-height: 300px; padding: 22px 0; border-right: 0; border-top: 1px solid var(--line); } .trend-item:first-child { border-top: 0; } }
